@@ -108,6 +108,14 @@
                                     <segue destination="F35-ak-IUt" kind="show" id="aAP-fN-W9u"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dialog box" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05X-p0-c4G">
+                                <rect key="frame" x="57" y="232" width="306" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wd-g6-ZeF">
                                 <rect key="frame" x="312" y="714" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,12 +130,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="IDM-3O-058"/>
                     <connections>
+                        <outlet property="dialogBox" destination="05X-p0-c4G" id="VkI-2E-Krr"/>
+                        <outlet property="scanButton" destination="kOg-IB-Nvo" id="ZVb-YE-v1g"/>
                         <outlet property="sceneView" destination="rwR-a7-4T7" id="mNx-hB-4A3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-kn-anV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="-15"/>
+            <point key="canvasLocation" x="1837.68115942029" y="-15.401785714285714"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="X0Q-8R-iM7">
