@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 
+
 class ARViewController: UIViewController {
 
     
@@ -17,10 +18,10 @@ class ARViewController: UIViewController {
     let configuration = ARWorldTrackingConfiguration()
     var cameraPosition: SCNVector3!
     var cameraRotation: SCNVector4!
-    
+        
     @IBOutlet weak var dialogBox: UILabel!
     @IBOutlet weak var scanButton: UIButton!
-    var availableClues: Array<String> = ["hair"]
+    var availableClues: Array<String> = ["hair", "footprint", "button"]
     var foundClues: Array<String> = []
     
     override func viewDidLoad() {
@@ -29,7 +30,6 @@ class ARViewController: UIViewController {
         dialogBox.isHidden = true
     }
     
-
     @IBAction func scanForClues(_ sender: Any) {
         print(availableClues.count)
         if(availableClues.isEmpty) {
@@ -39,6 +39,7 @@ class ARViewController: UIViewController {
         } else {
             let clue = createNode(name: pickRandomClue())!
             checkForMovement(clueNode: clue)
+            
         }
     }
     
@@ -79,11 +80,9 @@ class ARViewController: UIViewController {
         let time = DispatchTime.now() + 1.0
         DispatchQueue.main.asyncAfter(deadline:time) {
             let odds = Float.random(in: 0 ..< 1)
-                
-            print(odds)
             if(odds > 0.7 || (difference < 0.5 && difference > -0.5)) {
                 self.dialogBox.isHidden = false
-                self.dialogBox.text = "Nothing here. Try a different part of your room"
+                self.dialogBox.text = "Nothing here. Try somewhere else"
             } else {
                 //play some sort of sound
                 self.dialogBox.isHidden = false
@@ -99,11 +98,21 @@ class ARViewController: UIViewController {
     }
     
     func examineClue(clue: SCNNode) {
-       // addNode(clueNode: clue)
+        addNode(clueNode: clue)
         scanButton.setTitle("Scan", for: .normal)
-        //something that parses text from whatever the clue is
-        dialogBox.text = "You found whatever the clue is! \(clue.name)"
-        //add clue to evidence locker
+        let name: String = clue.name ?? "Clue name broke"
+        dialogBox.text = "You found a \(name) from the murderer! This clue has been added to your evidence. Click Scan again to keep looking."
+        
+        switch name {
+            case "hair":
+            Evidence.hair = true
+            case "footprint":
+            Evidence.footprint = true
+            case "button":
+            Evidence.button = true
+            default:
+            print("Clue switch case went wrong, name provided was \(name)")
+        }
         
     }
     
@@ -129,8 +138,6 @@ class ARViewController: UIViewController {
     func fadeIn(node: SCNNode!) {
         SCNTransaction.animationDuration = 3.0
         node.scale = SCNVector3(0.07, 0.07, 0.07)
-        if(node.name == "flag") {
-            node.scale = SCNVector3(0.03, 0.03, 0.03)
-        }
     }
 }
+

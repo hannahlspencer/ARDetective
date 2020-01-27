@@ -235,22 +235,14 @@
             </objects>
             <point key="canvasLocation" x="-1807" y="1171"/>
         </scene>
-        <!--View Controller-->
+        <!--Evidence View Controller-->
         <scene sceneID="zOi-qD-KCE">
             <objects>
-                <viewController id="F35-ak-IUt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EvidenceViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F35-ak-IUt" customClass="EvidenceViewController" customModule="ARDetective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gdn-qF-9ML">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="EVIDENCE PAGE" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-zR-cYg">
-                                <rect key="frame" x="87" y="199" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-UR-tKL">
                                 <rect key="frame" x="42" y="756" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -275,15 +267,64 @@
                                     <segue destination="ieT-O2-9lP" kind="show" id="xEV-TX-9fV"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hair.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nLc-H9-cRo">
+                                <rect key="frame" x="23" y="122" width="152" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hair" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97c-zx-3f8">
+                                <rect key="frame" x="255" y="122" width="95" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="footprint.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x2B-7S-dcQ">
+                                <rect key="frame" x="20" y="280" width="152" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Footprint" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHu-El-3er">
+                                <rect key="frame" x="239" y="280" width="140" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="cZU-zT-vft">
+                                <rect key="frame" x="20" y="447" width="152" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Button" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyM-Ys-230">
+                                <rect key="frame" x="248" y="447" width="123" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="EVIDENCE PAGE" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-zR-cYg">
+                                <rect key="frame" x="133" y="20" width="148" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="T6B-j8-Urg"/>
                     </view>
                     <navigationItem key="navigationItem" id="pBN-ov-6rU"/>
+                    <connections>
+                        <outlet property="buttonImage" destination="cZU-zT-vft" id="RDq-9d-aqO"/>
+                        <outlet property="buttonLabel" destination="YyM-Ys-230" id="bBc-UV-rDx"/>
+                        <outlet property="footprintImage" destination="x2B-7S-dcQ" id="yBP-sR-eAU"/>
+                        <outlet property="footprintLabel" destination="eHu-El-3er" id="Q6o-UC-pea"/>
+                        <outlet property="hairImage" destination="nLc-H9-cRo" id="oQk-nn-RY5"/>
+                        <outlet property="hairLabel" destination="97c-zx-3f8" id="8WP-8u-vsj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp8-s2-9xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="1146"/>
+            <point key="canvasLocation" x="63.768115942028992" y="1144.4196428571429"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zum-yR-yoZ">
@@ -493,10 +534,13 @@
     </scenes>
     <resources>
         <image name="blankface.jpg" width="192" height="208"/>
+        <image name="button.JPG" width="256" height="192"/>
+        <image name="footprint.jpg" width="911" height="1390"/>
+        <image name="hair.jpg" width="660" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KED-hh-Zrm"/>
-        <segue reference="aAP-fN-W9u"/>
+        <segue reference="xEV-TX-9fV"/>
+        <segue reference="t1e-9Z-d82"/>
         <segue reference="ct7-jV-3TD"/>
         <segue reference="t3f-x5-8Ub"/>
     </inferredMetricsTieBreakers>
